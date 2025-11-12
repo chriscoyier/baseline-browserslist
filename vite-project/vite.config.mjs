@@ -7,7 +7,7 @@ import legacy from "@vitejs/plugin-legacy";
 const execAsync = promisify(exec);
 
 // Shared browserslist query
-const BROWSERSLIST_QUERY = "baseline widely available";
+const BROWSERSLIST_QUERY = "baseline 2020";
 
 function buildOnChange() {
   let building = false;
@@ -56,7 +56,7 @@ export default {
     legacy({
       targets: BROWSERSLIST_QUERY,
       modernPolyfills: true,
-      renderLegacyChunks: false,
+      renderLegacyChunks: true,
     }),
     buildOnChange(),
   ],

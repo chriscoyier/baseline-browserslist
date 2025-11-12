@@ -71,8 +71,8 @@ class MathHelper {
 console.log("Circumference:", MathHelper.getCircumference(10));
 
 // 10. Top-level await - ES2022
-const data = await Promise.resolve({ loaded: true });
-console.log("Top-level await:", data);
+// const data = await Promise.resolve({ loaded: true });
+// console.log("Top-level await:", data);
 
 // 11. Array.at() - ES2022
 const arr = [1, 2, 3, 4, 5];
