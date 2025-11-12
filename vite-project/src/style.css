@@ -2,27 +2,10 @@ body {
     background-color: oklch(52.98% 0.1768 142.5);
     main {
         background: light-dark(white, black);
-        &:not(.home) {
-            border: 1px solid black;
-        }
+        padding-inline-start: 1rlh;
     }
-}
-
-.shape {
-    clip-path: shape(
-        from top left,
-        hline to 100%,
-        vline to 100%,
-        curve to 0% 100% with 50% 0%
-    );
 }
 
 .mask {
     mask: url(#mask);
-}
-
-@layer reset {
-    body {
-        margin: 10px;
-    }
 }

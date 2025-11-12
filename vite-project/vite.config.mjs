@@ -7,7 +7,10 @@ import legacy from "@vitejs/plugin-legacy";
 const execAsync = promisify(exec);
 
 // Shared browserslist query
-const BROWSERSLIST_QUERY = "baseline 2020";
+// const BROWSERSLIST_QUERY = "defaults";
+const BROWSERSLIST_QUERY = "baseline newly available";
+// const BROWSERSLIST_QUERY = "baseline widely available";
+// const BROWSERSLIST_QUERY = "baseline 2022";
 
 function buildOnChange() {
   let building = false;
