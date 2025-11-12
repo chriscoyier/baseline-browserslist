@@ -8,10 +8,10 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "browserslist": [
-    "baseline newly available"
-  ],
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@vitejs/plugin-legacy": "^7.2.1",
     "browserslist": "^4.27.0",
     "lightningcss": "^1.30.2",
     "vite": "npm:rolldown-vite@7.1.14"

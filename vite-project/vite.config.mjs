@@ -2,8 +2,12 @@ import browserslist from "browserslist";
 import { browserslistToTargets } from "lightningcss";
 import { exec } from "child_process";
 import { promisify } from "util";
+import legacy from "@vitejs/plugin-legacy";
 
 const execAsync = promisify(exec);
+
+// Shared browserslist query
+const BROWSERSLIST_QUERY = "baseline widely available";
 
 function buildOnChange() {
   let building = false;
@@ -34,7 +38,7 @@ export default {
   css: {
     transformer: "lightningcss",
     lightningcss: {
-      targets: browserslistToTargets(browserslist("baseline 2024")),
+      targets: browserslistToTargets(browserslist(BROWSERSLIST_QUERY)),
     },
   },
   build: {
@@ -48,5 +52,12 @@ export default {
       },
     },
   },
-  plugins: [buildOnChange()],
+  plugins: [
+    legacy({
+      targets: BROWSERSLIST_QUERY,
+      modernPolyfills: true,
+      renderLegacyChunks: false,
+    }),
+    buildOnChange(),
+  ],
 };
